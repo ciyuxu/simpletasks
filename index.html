@@ -10,7 +10,17 @@
   <body>
     <div id="simpletasks">
       <h2>{{ title }}</h2>
-
+      <form>
+        <h4>Add new tasks here</h4>
+        <input
+          v-model="newTask"
+          type="text"
+          name="newTask"
+          id="newTask"
+          value=""
+        />
+        <button type="submit" name="button">Add</button>
+      </form>
       <li v-for="task in tasks">
         <input type="checkbox" v-model="task.done" />
         <span :class="{ done: task.done }">{{ task.text }}</span>
