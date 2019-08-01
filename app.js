@@ -16,6 +16,7 @@ var app = new Vue({
         done: false,
         id: Date.now()
       });
+      this.newTask = "";
     }
   }
 });
