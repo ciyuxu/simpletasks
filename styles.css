@@ -1,7 +1,7 @@
 .done {
   text-decoration: line-through;
 }
-
+body,
 h1,
 h2,
 h3,
@@ -9,6 +9,58 @@ h4 {
   font-family: "Nunito Sans", sans-serif;
 }
 
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 20px;
+}
+h3 {
+  font-size: 18px;
+}
+h4 {
+  font-size: 14px;
+}
+input#newTask {
+  font-size: 18px;
+  width: 70%;
+  padding-left: 10px;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-bottom-color: #bfbfbf;
+}
+button#addButton {
+  font-size: 14px;
+  padding: 4px 0;
+  width: 16%;
+  color: #ffffff;
+  background-color: #1fb58f;
+  border-radius: 4px;
+}
+ul {
+  padding-inline-start: 4px;
+}
 li {
+  font-size: 18px;
   font-family: "Nunito Sans", sans-serif;
+  margin: 10px 0;
+}
+/* plceholder text styling */
+
+/* special round checkbox style adjstment */
+.abc-checkbox input[type="checkbox"]:checked + label::after,
+.abc-checkbox input[type="radio"]:checked + label::after {
+  margin-top: 3px;
+  margin-left: -19px;
+}
+.abc-checkbox-info input[type="checkbox"]:checked + label::before,
+.abc-checkbox-info input[type="radio"]:checked + label::before {
+  background-color: #1fb58f !important;
+  border-color: #1fb58f !important;
+}
+.single-task {
+  margin-bottom: 6px;
+  border-bottom: 1px solid #bfbfbf;
 }

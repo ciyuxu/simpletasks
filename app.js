@@ -1,7 +1,7 @@
 var app = new Vue({
   el: "#simpletasks",
   data: {
-    title: "Tasks overview",
+    title: "Tasks",
     newTask: "",
 
     tasks: [
