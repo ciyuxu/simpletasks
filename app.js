@@ -17,6 +17,9 @@ var app = new Vue({
         id: Date.now()
       });
       this.newTask = "";
+    },
+    removeTask(task) {
+      this.tasks.splice(this.tasks.indexOf(task), 1);
     }
   }
 });

@@ -23,7 +23,7 @@ h4 {
 }
 input#newTask {
   font-size: 18px;
-  width: 70%;
+  width: 80%;
   padding-left: 10px;
   border-left-width: 0px;
   border-top-width: 0px;
@@ -32,9 +32,16 @@ input#newTask {
   border-bottom-color: #bfbfbf;
 }
 button#addButton {
+  float: right;
   font-size: 14px;
   padding: 4px 0;
   width: 16%;
+  color: #ffffff;
+  background-color: #1fb58f;
+  border-radius: 4px;
+}
+button#removeButton {
+  float: right;
   color: #ffffff;
   background-color: #1fb58f;
   border-radius: 4px;
@@ -47,7 +54,6 @@ li {
   font-family: "Nunito Sans", sans-serif;
   margin: 10px 0;
 }
-/* plceholder text styling */
 
 /* special round checkbox style adjstment */
 .abc-checkbox input[type="checkbox"]:checked + label::after,
