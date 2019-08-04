@@ -11,12 +11,16 @@ var app = new Vue({
   },
   methods: {
     addTask() {
-      this.tasks.push({
-        text: this.newTask,
-        done: false,
-        id: Date.now()
-      });
-      this.newTask = "";
+      if (this.newTask.length > 0) {
+        this.tasks.push({
+          text: this.newTask,
+          done: false,
+          id: Date.now()
+        });
+        this.newTask = "";
+      } else {
+        window.alert("Please describe your task");
+      }
     },
     removeTask(task) {
       this.tasks.splice(this.tasks.indexOf(task), 1);

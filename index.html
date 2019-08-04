@@ -31,8 +31,9 @@
           id="newTask"
           value=""
           placeholder="Add new tasks here"
+          class="noSelect"
         />
-        <button type="submit" name="button" class="btn" id="addButton">
+        <button type="submit" name="button" class="btn noSelect" id="addButton">
           <i class="fa fa-plus"></i> Add
         </button>
       </form>
@@ -44,12 +45,16 @@
             <input
               type="checkbox"
               v-model="task.done"
-              class="form-check-input"
+              class="form-check-input noSelect"
               v-bind:id="task.id"
             />
             <label class="form-check-label" v-bind:for="task.id"></label>
             <span :class="{ done: task.done }">{{ task.text }}</span>
-            <button @click="removeTask(task)" id="removeButton">
+            <button
+              @click="removeTask(task)"
+              id="removeButton"
+              class="noSelect"
+            >
               <i class="fa fa-times"></i>
             </button>
           </div>

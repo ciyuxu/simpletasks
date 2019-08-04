@@ -40,12 +40,14 @@ button#addButton {
   color: #ffffff;
   background-color: #1fb58f;
   border-radius: 4px;
+  border: #1fb58f solid 1px;
 }
 button#removeButton {
   float: right;
   color: #ffffff;
   background-color: #1fb58f;
   border-radius: 4px;
+  border: #1fb58f solid 1px;
 }
 ul {
   padding-inline-start: 4px;
@@ -54,6 +56,9 @@ li {
   font-size: 18px;
   font-family: "Nunito Sans", sans-serif;
   margin: 10px 0;
+}
+li::marker {
+  display: none;
 }
 
 /* special round checkbox style adjstment */
@@ -78,4 +83,9 @@ li {
 .done {
   text-decoration: line-through;
   color: grey;
+}
+
+/* un-hightlight selection in Chrome */
+.noSelect:focus {
+  outline: none !important;
 }
