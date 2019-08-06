@@ -2,6 +2,7 @@ var app = new Vue({
   el: "#simpletasks",
   data: {
     title: "Tasks",
+    category: "Design iOS app",
     newTask: "",
     tasks: [
       { text: "task 1", done: false, id: Date.now() },

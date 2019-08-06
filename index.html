@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>SimpleTasks</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap"
@@ -22,8 +22,12 @@
   <body>
     <div id="simpletasks">
       <header>
-        <div id="header-title"><h2>RentSafe</h2></div>
-        <div id="shared"><p>Shared with</p></div>
+        <div id="header-title">
+          <h2>RentSafe <i class="fas fa-star"></i></h2>
+        </div>
+        <div id="shared">
+          <p>Shared with Idea Revolution and 2 other people</p>
+        </div>
         <div id="header-menu">
           <h4
             v-for="menuname, menu in menus"
@@ -33,12 +37,6 @@
             {{ menuname }}
           </h4>
         </div>
-        <!-- <h4>Overview</h4>
-          <h4>Tasks</h4>
-          <h4>Activity</h4>
-          <h4>Management</h4>
-          <h4>...</h4>
-        </div> -->
         <div id="header-img">
           <img
             src="https://hbimg.huabanimg.com/2709b93e28b25f95c078086d45244630278e378b4488-ZPsq1f_fw658"
@@ -66,13 +64,26 @@
       </nav>
       <section>
         <img src="percent.png" />
-        <h4>89 Tasks checked</h4>
-        <h4>5 Milestone finished</h4>
-        <h4>225 hour worked</h4>
+        <p><i class="fas fa-check"></i> 89 Tasks checked</p>
+        <p><i class="fas fa-check-double"></i> 5 Milestone finished</p>
+        <p><i class="fas fa-stopwatch"></i> 225 hour worked</p>
       </section>
       <main>
-        <h4>{{ title }}</h4>
+        <h4>Updates</h4>
         <hr />
+        <ul id="updates" style="list-style-type:none">
+          <li>
+            <span class="task-date">21 Feb 2016</span>
+            <span class="task-taker">Fabian</span>
+            <span>created 4 new tasks in</span>
+            <span class="task-category">{{ category }}</span>
+          </li>
+          <li></li>
+          <li></li>
+        </ul>
+        <h4 class="task-title">{{ title }}</h4>
+        <hr />
+        <h4 class="task-category">{{ category }}</h4>
         <form @submit.prevent="addTask">
           <input
             v-model="newTask"
@@ -92,7 +103,7 @@
             <i class="fas fa-plus"></i> Add
           </button>
         </form>
-        <ul style="list-style-type:none">
+        <ul id="tasks" style="list-style-type:none">
           <li v-for="task in tasks" class="single-task">
             <div
               class="form-check abc-checkbox abc-checkbox-info abc-checkbox-circle"

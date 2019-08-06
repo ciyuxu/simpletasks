@@ -1,3 +1,4 @@
+/* ===overall styling=== */
 body,
 h1,
 h2,
@@ -21,6 +22,7 @@ h3 {
   font-size: 18px;
 }
 h4 {
+  margin: 0;
   font-size: 14px;
   font-weight: 700;
 }
@@ -28,9 +30,17 @@ input {
   font-size: 14px;
 }
 p {
+  font-size: 12px;
   margin-block-start: 5px;
   margin-block-end: 5px;
 }
+li {
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+/* ===layout styling=== */
+/* overall set-up in Grid */
 #simpletasks {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -42,38 +52,44 @@ p {
   background: #f9f9f9;
 }
 #simpletasks > * {
-  padding: 10px 20px;
+  padding: 10px 20px 0px 20px;
 }
-
+/* header styling */
 header {
   grid-column: 2 / 13;
   grid-row: 1 / 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2px;
-  margin: 0;
+  padding: 10px 20px 0px 35px !important;
   background: #ffffff;
-  padding-bottom: 0px !important;
   box-shadow: 0 4px 4px -4px #bfbfbf;
 }
 #header-menu {
   display: flex;
 }
 #header-menu h4 {
-  margin-right: 10px;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
+  margin: 0 15px 0 0;
+  color: #bfbfbf;
 }
 #header-menu h4:hover {
   cursor: pointer;
 }
+#header-title i {
+  color: #ffd700;
+  font-size: 14px;
+}
 .current {
+  color: black !important;
   border-bottom: 2px solid #1fb58f;
 }
 #shared,
 #header-img {
   display: flex;
   justify-content: flex-end;
+}
+#shared p {
+  color: #bfbfbf;
 }
 header div img {
   width: 20px;
@@ -82,7 +98,12 @@ header div img {
   border-radius: 50%;
   margin: 2px;
 }
-
+#header-img i {
+  font-size: 22px;
+  color: #bfbfbf;
+  margin: 2px;
+}
+/* nav styling */
 nav {
   display: grid;
   grid-column: 1 / 2;
@@ -97,29 +118,48 @@ nav i {
   text-align: center;
   color: #f9f9f9;
 }
-
+nav h2:hover,
+nav i:hover {
+  cursor: pointer;
+}
+/* section styling */
 section {
   display: flex;
   align-items: center;
   grid-column: 2 / 13;
   grid-row: 2 / 3;
+  margin-left: 15px;
 }
 section > * {
   padding: 10px;
 }
 section img {
   height: 40px;
+  padding: 2px;
 }
-
+section i {
+  color: #1fb58f;
+}
+/* main styling */
 main {
   grid-column: 2 / 10;
   grid-row: 3/ 8;
+  margin-left: 30px;
   background: #ffffff;
   -webkit-box-shadow: 4px 4px 4px -4px #bfbfbf;
   -moz-box-shadow: 4px 4px 4px -4px #bfbfbf;
   box-shadow: 4px 4px 4px -4px #bfbfbf;
 }
-
+.task-date {
+  margin-right: 20px;
+}
+.task-taker {
+  color: #1fb58f;
+}
+.task-category {
+  color: #1fb58f;
+}
+/* small function-wise sections' styling */
 input#newTask {
   font-size: 14px;
   width: 80%;
@@ -147,18 +187,20 @@ button#removeButton {
   border-radius: 4px;
   border: #1fb58f solid 1px;
 }
+.single-task {
+  margin-bottom: 6px;
+  border-bottom: 1px solid #bfbfbf;
+}
+.done {
+  text-decoration: line-through;
+  color: grey;
+}
 ul {
   padding-inline-start: 4px;
 }
-li {
-  font-size: 14px;
-  font-family: "Nunito Sans", sans-serif;
-  margin: 10px 0;
+main button {
+  cursor: pointer;
 }
-li::marker {
-  display: none;
-}
-
 /* special round checkbox style adjstment */
 .abc-checkbox input[type="checkbox"]:checked + label::after,
 .abc-checkbox input[type="radio"]:checked + label::after {
@@ -180,16 +222,6 @@ li::marker {
 .form-check {
   margin: 10px 0;
 }
-
-.single-task {
-  margin-bottom: 6px;
-  border-bottom: 1px solid #bfbfbf;
-}
-.done {
-  text-decoration: line-through;
-  color: grey;
-}
-
 /* un-hightlight selection in Chrome */
 .noSelect:focus {
   outline: none !important;
