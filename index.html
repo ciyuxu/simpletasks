@@ -25,12 +25,20 @@
         <div id="header-title"><h2>RentSafe</h2></div>
         <div id="shared"><p>Shared with</p></div>
         <div id="header-menu">
-          <h4>Overview</h4>
+          <h4
+            v-for="menuname, menu in menus"
+            @click="current = menu"
+            :class="{current:menu == current}"
+          >
+            {{ menuname }}
+          </h4>
+        </div>
+        <!-- <h4>Overview</h4>
           <h4>Tasks</h4>
           <h4>Activity</h4>
           <h4>Management</h4>
           <h4>...</h4>
-        </div>
+        </div> -->
         <div id="header-img">
           <img
             src="https://hbimg.huabanimg.com/2709b93e28b25f95c078086d45244630278e378b4488-ZPsq1f_fw658"

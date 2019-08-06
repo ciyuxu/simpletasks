@@ -3,11 +3,12 @@ var app = new Vue({
   data: {
     title: "Tasks",
     newTask: "",
-
     tasks: [
       { text: "task 1", done: false, id: Date.now() },
       { text: "task 2", done: false, id: Date.now() + 1 }
-    ]
+    ],
+    current: 0,
+    menus: ["Overview", "Tasks", "Activity", "Management", "..."]
   },
   methods: {
     addTask() {
