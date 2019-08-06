@@ -15,15 +15,99 @@ h1 {
 h2 {
   font-size: 20px;
   margin: 5px 0;
+  font-weight: 900;
 }
 h3 {
   font-size: 18px;
 }
 h4 {
   font-size: 14px;
+  font-weight: 700;
+}
+input {
+  font-size: 14px;
+}
+p {
+  margin-block-start: 5px;
+  margin-block-end: 5px;
+}
+#simpletasks {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /* grid-auto-rows: minmax(40px, auto); */
+  grid-gap: 2px;
+  max-width: 960px;
+  height: 600px;
+  margin: 0 auto;
+  background: #f9f9f9;
+}
+#simpletasks > * {
+  padding: 10px 20px;
+}
+
+header {
+  grid-column: 2 / 13;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+  margin: 0;
+  background: #ffffff;
+}
+#header-menu {
+  display: flex;
+}
+#header-menu h4 {
+  padding-right: 10px;
+}
+#shared,
+#header-img {
+  display: flex;
+  justify-content: flex-end;
+}
+header div img {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #bfbfbf;
+  border-radius: 50%;
+  margin: 2px;
+}
+
+nav {
+  display: grid;
+  grid-column: 1 / 2;
+  grid-row: 1 / 12;
+  grid-auto-rows: minmax(auto, 60px);
+  background: #3f4551;
+}
+nav h2 {
+  color: #1fb58f;
+}
+nav i {
+  text-align: center;
+  color: #f9f9f9;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  grid-column: 2 / 13;
+  grid-row: 2 / 3;
+}
+section > * {
+  padding: 10px;
+}
+section img {
+  height: 40px;
+}
+
+main {
+  grid-column: 2 / 10;
+  grid-row: 3/ 8;
+  background: #ffffff;
 }
 input#newTask {
-  font-size: 18px;
+  font-size: 14px;
   width: 80%;
   padding-left: 10px;
   border-left-width: 0px;
@@ -34,7 +118,7 @@ input#newTask {
 }
 button#addButton {
   float: right;
-  font-size: 14px;
+  font-size: 12px;
   padding: 4px 0;
   width: 16%;
   color: #ffffff;
@@ -53,7 +137,7 @@ ul {
   padding-inline-start: 4px;
 }
 li {
-  font-size: 18px;
+  font-size: 14px;
   font-family: "Nunito Sans", sans-serif;
   margin: 10px 0;
 }
@@ -62,6 +146,13 @@ li::marker {
 }
 
 /* special round checkbox style adjstment */
+.abc-checkbox input[type="checkbox"]:checked + label::after,
+.abc-checkbox input[type="radio"]:checked + label::after {
+  font-family: "Font Awesome 5 Free" !important;
+  content: "";
+  visibility: visible;
+  font-weight: 900;
+}
 .abc-checkbox input[type="checkbox"]:checked + label::after,
 .abc-checkbox input[type="radio"]:checked + label::after {
   margin-top: 3px;

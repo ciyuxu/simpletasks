@@ -15,51 +15,99 @@
       rel="stylesheet"
     />
     <link
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-1/css/all.min.css"
       rel="stylesheet"
     />
   </head>
   <body>
     <div id="simpletasks">
-      <h2>{{ title }}</h2>
-      <hr />
-      <form @submit.prevent="addTask">
-        <input
-          v-model="newTask"
-          type="text"
-          name="newTask"
-          id="newTask"
-          value=""
-          placeholder="Add new tasks here"
-          class="noSelect"
-        />
-        <button type="submit" name="button" class="btn noSelect" id="addButton">
-          <i class="fa fa-plus"></i> Add
-        </button>
-      </form>
-      <ul>
-        <li v-for="task in tasks" class="single-task">
-          <div
-            class="form-check abc-checkbox abc-checkbox-info abc-checkbox-circle"
+      <header>
+        <div id="header-title"><h2>RentSafe</h2></div>
+        <div id="shared"><p>Shared with</p></div>
+        <div id="header-menu">
+          <h4>Overview</h4>
+          <h4>Tasks</h4>
+          <h4>Activity</h4>
+          <h4>Management</h4>
+          <h4>...</h4>
+        </div>
+        <div id="header-img">
+          <img
+            src="https://hbimg.huabanimg.com/2709b93e28b25f95c078086d45244630278e378b4488-ZPsq1f_fw658"
+          />
+          <img
+            src="https://hbimg.huabanimg.com/d99fec0f5e6eba4ca06b56038b23846604930d0a33a8-Z1pO89_fw658"
+          />
+          <img
+            src="https://hbimg.huabanimg.com/d4dafe87e7b33e62ad2e3191ddb0810ad7dd8dd86e12-nLWtfC_fw658"
+          />
+          <img
+            src="https://hbimg.huabanimg.com/f93b41eee086f04d94449500e304de2480ad08d251a7-YkiqWm_fw658"
+          />
+          <i class="fas fa-plus-circle"></i>
+        </div>
+      </header>
+      <nav>
+        <h2>Tasklab.</h2>
+        <i class="fas fa-home"></i>
+        <i class="fas fa-clipboard-list"></i>
+        <i class="fas fa-list-ul"></i>
+        <i class="fas fa-piggy-bank"></i>
+        <i class="fas fa-briefcase"></i>
+        <i class="fas fa-cog"></i>
+      </nav>
+      <section>
+        <img src="percent.png" />
+        <h4>89 Tasks checked</h4>
+        <h4>5 Milestone finished</h4>
+        <h4>225 hour worked</h4>
+      </section>
+      <main>
+        <h4>{{ title }}</h4>
+        <hr />
+        <form @submit.prevent="addTask">
+          <input
+            v-model="newTask"
+            type="text"
+            name="newTask"
+            id="newTask"
+            value=""
+            placeholder="Add new tasks here"
+            class="noSelect"
+          />
+          <button
+            type="submit"
+            name="button"
+            class="btn noSelect"
+            id="addButton"
           >
-            <input
-              type="checkbox"
-              v-model="task.done"
-              class="form-check-input noSelect"
-              v-bind:id="task.id"
-            />
-            <label class="form-check-label" v-bind:for="task.id"></label>
-            <span :class="{ done: task.done }">{{ task.text }}</span>
-            <button
-              @click="removeTask(task)"
-              id="removeButton"
-              class="noSelect"
+            <i class="fas fa-plus"></i> Add
+          </button>
+        </form>
+        <ul style="list-style-type:none">
+          <li v-for="task in tasks" class="single-task">
+            <div
+              class="form-check abc-checkbox abc-checkbox-info abc-checkbox-circle"
             >
-              <i class="fa fa-times"></i>
-            </button>
-          </div>
-        </li>
-      </ul>
+              <input
+                type="checkbox"
+                v-model="task.done"
+                class="form-check-input noSelect"
+                v-bind:id="task.id"
+              />
+              <label class="form-check-label" v-bind:for="task.id"></label>
+              <span :class="{ done: task.done }">{{ task.text }}</span>
+              <button
+                @click="removeTask(task)"
+                id="removeButton"
+                class="noSelect"
+              >
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </main>
     </div>
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
